@@ -1,10 +1,12 @@
 "use client";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
+  const location = usePathname();
 
   return (
     <nav className="bg-stone-300 relative">
@@ -30,10 +32,20 @@ const Navbar = () => {
 
         {/* Desktop Navigation */}
         <ul className="hidden md:flex items-center gap-6 text-lg">
-          <Link href="/" className="hover:text-orange-500 cursor-pointer">
+          <Link
+            href="/"
+            className={`hover:text-orange-500 cursor-pointer ${
+              location == "/" && "text-orange-500"
+            }`}
+          >
             Home
           </Link>
-          <Link href="/about" className="hover:text-orange-500 cursor-pointer">
+          <Link
+            href="/about"
+            className={`hover:text-orange-500 cursor-pointer ${
+              location == "/about" && "text-orange-500"
+            }`}
+          >
             About
           </Link>
           <Link href="/earn" className="hover:text-orange-500 cursor-pointer">
