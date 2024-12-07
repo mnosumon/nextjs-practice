@@ -1,13 +1,14 @@
 "use client";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
+
 import { useState } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
   const location = usePathname();
-
+  const router = useRouter();
   return (
     <nav className="bg-stone-300 relative">
       <div className="flex items-center justify-around md:justify-between w-[90%] mx-auto py-4">
@@ -64,7 +65,10 @@ const Navbar = () => {
             Learn
           </Link>
         </ul>
-        <button className="hidden md:block bg-orange-500 text-white py-2 px-4 rounded hover:bg-orange-600">
+        <button
+          onClick={() => router.push("/about")}
+          className="hidden md:block bg-orange-500 text-white py-2 px-4 rounded hover:bg-orange-600"
+        >
           Submit
         </button>
 
@@ -103,9 +107,13 @@ const Navbar = () => {
               Learn
             </Link>
             <div>
-              <button className="bg-orange-500 text-white py-2 px-4 rounded hover:bg-orange-600">
+              {/* <button
+                onClick={() => navigate.push("/userList")}
+                className="bg-orange-500 text-white py-2 px-4 rounded hover:bg-orange-600"
+              >
                 Submit
-              </button>
+              </button> */}
+              <button type="button">Click me</button>
             </div>
           </ul>
         </div>
