@@ -52,7 +52,10 @@ const Navbar = () => {
           <Link href="/earn" className="hover:text-orange-500 cursor-pointer">
             Earn
           </Link>
-          <Link href="contact" className="hover:text-orange-500 cursor-pointer">
+          <Link
+            href="/contact"
+            className="hover:text-orange-500 cursor-pointer"
+          >
             Contact
           </Link>
           <Link

@@ -1,15 +1,17 @@
 import Link from "next/link";
 import React from "react";
 
-const Dn = () => {
+const Hne = () => {
   const arr = [
     {
       id: "01",
+      category: "t-Shart",
       title: "hello world",
       description: "loraem loreanm koean lorean loran",
     },
     {
       id: "02",
+      category: "pant",
       title: "Every world",
       description:
         "loraem loreanm koean lorean loran loraem loreanm koean lorean loran",
@@ -21,7 +23,7 @@ const Dn = () => {
         {arr.map((item) => (
           <div className="">
             <li key={item.id}>
-              <Link href={`/about/${item.id}`}>{item.title}</Link>
+              <Link href={`/dynamic/${item.category}`}>{item.title}</Link>
             </li>
           </div>
         ))}
@@ -30,4 +32,4 @@ const Dn = () => {
   );
 };
 
-export default Dn;
+export default Hne;
